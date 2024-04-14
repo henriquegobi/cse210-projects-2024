@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ContactManager
 {
     public partial class RegisterForm : Form
     {
-        Manager manager = new Manager();
         public RegisterForm()
         {
             InitializeComponent();
@@ -28,9 +28,18 @@ namespace ContactManager
 
         }
 
-        private void RegisterForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void registerButton_Click(object sender, EventArgs e)
         {
-            manager.OpenLoginForm();
+            if(fullNameBox.Text == "" || userBox.Text == ""|| passwordBox.Text == "" || emailBox.Text == "" || phoneNumberBox.Text == "")
+            {
+                MessageBox.Show("There are blank fields, please fill in all fields before registering!");
+            }
+            else
+            {
+                User user = new User(fullNameBox.Text, userBox.Text, passwordBox.Text, emailBox.Text, phoneNumberBox.Text);
+                Manager.RegisterUser(user);
+                this.Close();
+            }
         }
     }
 }

@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             label1 = new Label();
-            textBox1 = new TextBox();
+            fullNameBox = new TextBox();
             label2 = new Label();
-            textBox2 = new TextBox();
+            userBox = new TextBox();
             label3 = new Label();
-            textBox3 = new TextBox();
+            passwordBox = new TextBox();
             registerButton = new Button();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
+            phoneNumberBox = new TextBox();
+            emailBox = new TextBox();
             phoneNumberLabel = new Label();
             label5 = new Label();
             SuspendLayout();
@@ -52,13 +53,13 @@
             label1.Text = "Type your full name";
             label1.Click += label1_Click;
             // 
-            // textBox1
+            // fullNameBox
             // 
-            textBox1.BackColor = SystemColors.Window;
-            textBox1.Location = new Point(12, 27);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(331, 23);
-            textBox1.TabIndex = 1;
+            fullNameBox.BackColor = SystemColors.Window;
+            fullNameBox.Location = new Point(12, 27);
+            fullNameBox.Name = "fullNameBox";
+            fullNameBox.Size = new Size(331, 23);
+            fullNameBox.TabIndex = 1;
             // 
             // label2
             // 
@@ -70,12 +71,12 @@
             label2.TabIndex = 2;
             label2.Text = "Type the user";
             // 
-            // textBox2
+            // userBox
             // 
-            textBox2.Location = new Point(12, 71);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(171, 23);
-            textBox2.TabIndex = 3;
+            userBox.Location = new Point(12, 71);
+            userBox.Name = "userBox";
+            userBox.Size = new Size(171, 23);
+            userBox.TabIndex = 3;
             // 
             // label3
             // 
@@ -87,12 +88,12 @@
             label3.TabIndex = 4;
             label3.Text = "Type the password(It can be anything)";
             // 
-            // textBox3
+            // passwordBox
             // 
-            textBox3.Location = new Point(12, 115);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(171, 23);
-            textBox3.TabIndex = 5;
+            passwordBox.Location = new Point(12, 115);
+            passwordBox.Name = "passwordBox";
+            passwordBox.Size = new Size(171, 23);
+            passwordBox.TabIndex = 5;
             // 
             // registerButton
             // 
@@ -104,20 +105,21 @@
             registerButton.TabIndex = 6;
             registerButton.Text = "Register";
             registerButton.UseVisualStyleBackColor = false;
+            registerButton.Click += registerButton_Click;
             // 
-            // textBox4
+            // phoneNumberBox
             // 
-            textBox4.Location = new Point(421, 27);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(175, 23);
-            textBox4.TabIndex = 7;
+            phoneNumberBox.Location = new Point(421, 27);
+            phoneNumberBox.Name = "phoneNumberBox";
+            phoneNumberBox.Size = new Size(175, 23);
+            phoneNumberBox.TabIndex = 7;
             // 
-            // textBox5
+            // emailBox
             // 
-            textBox5.Location = new Point(421, 71);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(175, 23);
-            textBox5.TabIndex = 8;
+            emailBox.Location = new Point(421, 71);
+            emailBox.Name = "emailBox";
+            emailBox.Size = new Size(175, 23);
+            emailBox.TabIndex = 8;
             // 
             // phoneNumberLabel
             // 
@@ -146,15 +148,16 @@
             ClientSize = new Size(620, 253);
             Controls.Add(label5);
             Controls.Add(phoneNumberLabel);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
+            Controls.Add(emailBox);
+            Controls.Add(phoneNumberBox);
             Controls.Add(registerButton);
-            Controls.Add(textBox3);
+            Controls.Add(passwordBox);
             Controls.Add(label3);
-            Controls.Add(textBox2);
+            Controls.Add(userBox);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(fullNameBox);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "RegisterForm";
             Text = "User Register";
             Load += RegisterForm_Load;
@@ -165,14 +168,14 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
+        private TextBox fullNameBox;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox userBox;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox passwordBox;
         private Button registerButton;
-        private TextBox textBox4;
-        private TextBox textBox5;
+        private TextBox phoneNumberBox;
+        private TextBox emailBox;
         private Label phoneNumberLabel;
         private Label label5;
     }

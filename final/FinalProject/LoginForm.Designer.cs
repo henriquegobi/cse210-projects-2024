@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             label1 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            userBox = new TextBox();
+            passwordBox = new TextBox();
             signInButton = new Button();
             registerButton = new Button();
             SuspendLayout();
@@ -55,28 +56,29 @@
             label2.TabIndex = 1;
             label2.Text = "Password";
             // 
-            // textBox1
+            // userBox
             // 
-            textBox1.Location = new Point(62, 27);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(171, 23);
-            textBox1.TabIndex = 2;
+            userBox.Location = new Point(62, 27);
+            userBox.Name = "userBox";
+            userBox.Size = new Size(171, 23);
+            userBox.TabIndex = 2;
             // 
-            // textBox2
+            // passwordBox
             // 
-            textBox2.Location = new Point(62, 71);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(171, 23);
-            textBox2.TabIndex = 3;
+            passwordBox.Location = new Point(62, 71);
+            passwordBox.Name = "passwordBox";
+            passwordBox.Size = new Size(171, 23);
+            passwordBox.TabIndex = 3;
             // 
             // signInButton
             // 
+            signInButton.BackColor = SystemColors.GradientActiveCaption;
             signInButton.Location = new Point(62, 109);
             signInButton.Name = "signInButton";
             signInButton.Size = new Size(75, 23);
             signInButton.TabIndex = 4;
-            signInButton.Text = "Sign in";
-            signInButton.UseVisualStyleBackColor = true;
+            signInButton.Text = "Login";
+            signInButton.UseVisualStyleBackColor = false;
             signInButton.Click += signInButton_Click;
             // 
             // registerButton
@@ -96,13 +98,15 @@
             ClientSize = new Size(292, 171);
             Controls.Add(registerButton);
             Controls.Add(signInButton);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(passwordBox);
+            Controls.Add(userBox);
             Controls.Add(label2);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             Load += Form1_Load;
             ResumeLayout(false);
@@ -113,8 +117,8 @@
 
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox userBox;
+        private TextBox passwordBox;
         private Button signInButton;
         private Button registerButton;
     }
